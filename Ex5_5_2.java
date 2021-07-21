@@ -13,7 +13,7 @@ public class Ex5_5_2 {
 			int r = (int)(Math.random()*(45-i)+i); // -i와 +i를 추가함으로써 한번 바꾼 부분은 제외할 수 있다.
 			int tmp = ball[i];
 			ball[i] = ball[r];
-			ball[r] = tmp; // 바꿨던 위치를 또 바꿀수도 있으므로 완전한 로또 확률이라고 보기 어렵지 않을까?
+			ball[r] = tmp; // 바꿨던 위치를 또 바꿀수도 있으므로 완전한 로또 확률이라고 보기 어렵지 않을까? 13행 수정!
 			System.out.println("ball["+i+"]="+ball[i]);
 		}
 	}
