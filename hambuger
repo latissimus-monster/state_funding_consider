@@ -1,0 +1,25 @@
+public class HamburgerBinary {
+public static void main(String[] args) { //십진수를 이진수로 변환할 예정
+		System.out.println("햄: "+(int) '햄' + ", 버: "+ (int) '버' + ", 거: " + (int) '거'); //햄버거에서 각 문자 값 출력
+
+		ArrayList<String> bin = new ArrayList<>();
+
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+
+		while (num / 2 != 1) { //십진수를 2로 나누고 나머지와 몫을 역순으로 적으면 이진수 값이 나온다.
+			String emp = null;  //텅빈 emp에 입력한 숫자를 2로 나눈 나머지를 String으로 바꾸어 대입하고, String 배열 bin에 집어넣는다.
+			emp = num % 2 + "";
+			bin.add(emp);
+			num = num / 2; //나눠서 나온 몫을 다시 나눠야하므로 갱신시킨다.
+		}
+		if (num % 2 == 1) {
+			System.out.print("11");
+		} else if (num % 2 == 0) {
+			System.out.print("10"); //2로 나누다보면 마지막으로 나눠지는 수는 2아니면 3인데, 3인 경우 11, 2인 경우 10이 맨 앞 두자리가 된다. 그냥 값 쭉 넣고 몫을 넣었어도 됐겠다.
+		}
+			for (int i = 0; i < bin.size(); i++) {
+				System.out.print(bin.get(bin.size() - 1 - i)); //순서대로 값들이 대입되다 보면 역순이되기 때문에 다시 반대로 바꿔서 출력한다.
+			}
+		}
+	}
